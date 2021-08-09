@@ -1,11 +1,144 @@
+<!--
+  Copyright (c) 2017-present, Facebook, Inc.
+  All rights reserved.
+
+  This source code is licensed under the license found in the
+  LICENSE file in the root directory of this source tree.
+-->
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <script src="script.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="viewport" content="user-scalable=no" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta name="theme-color" content="#999999" />
   </head>
+
   <body>
-    <h1>Hello there!</h1>
-    <a href="/me.html">My other page</a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- build:js -->
+    <script src="https://www.facebook.com/assets.php/en_US/fbinstant.latest.js"></script>
+    <!-- endbuild -->
+    <script src="js/app.js"></script>
+
+    <section id="menu">
+      <div class="header"></div>
+      <div class="stats">
+        <div class="games-played">
+          Games played: <span class="value"></span>
+        </div>
+        <div class="games-lost">Games lost: <span class="value"></span></div>
+      </div>
+      <div class="btn-container">
+        <button class="btn menu-btn btn-new-game">NEW GAME</button>
+        <button class="btn menu-btn btn-join-game">JOIN GAME</button>
+        <button class="btn menu-btn btn-how-to-play">HOW TO PLAY</button>
+      </div>
+    </section>
+
+    <section id="newGame">
+      <div class="btn-container">
+        <button class="btn btn-back">BACK</button>
+      </div>
+      <form class="new-game-form">
+        <div class="options">
+          <div class="row"><input type="checkbox" />PLAY 7 ANY TIME?</div>
+          <div class="row"><input type="checkbox" />7 REVERSES DIRECTTION</div>
+        </div>
+      </form>
+      <div class="players">
+        <div class="players-title">PLAYERS</div>
+        <div class="players-list"></div>
+      </div>
+    </section>
+    <section id="howToPlay">
+      <div class="btn-container">
+        <button class="btn btn-back">BACK</button>
+        <button class="btn submenu-btn btn-rules active">RULES</button>
+        <button class="btn submenu-btn btn-cards">CARDS</button>
+      </div>
+      <div class="instructions rules active">
+        <p>POOP HEAD IS A MULTIPLAYER CARD GAME</p>
+        <p>
+          THE OBJECT OF THE GAME IS TO FINISH THE DECK AND GET RID OF ALL YOUR
+          CARDS
+        </p>
+        <p>THE LAST PLAYER WITH CARDS REMAINING IS THE POOP HEAD</p>
+        <p>
+          AT THE START OF THE GAME EACH PLAYER IS DEALT 3 CARDS FACE DOWN AND 6
+          FACE UP
+        </p>
+        <p>
+          PLAYERS EACH PICK 3 CARDS TO KEEP IN THEIR HAND AND 1 TO PLACE FACE UP
+          ON EACH OF THE FACE DOWN CARDS
+        </p>
+        <p>
+          ON A PLAYERS TURN THEY MUST PLAY ONE OR MORE CARDS OF THE SAME OR
+          HIGHER VALUE THAN THE PREVIOUSLY PLAYED CARD
+        </p>
+        <p>ALL CARDS PLAYED IN A TURN MUST BE OF THE SAME VALUE</p>
+        <p>
+          PLAYING FOUR CARDS OF THE SAME VALUE WILL CLEAR THE PILE AND GIVE YOU
+          ANOTHER TURN
+        </p>
+        <p>IF THERE ARE NO CARDS IN THE PILE YOU CAN PLAY ANYTHING</p>
+        <p>
+          IF YOU CANNOT BEAT THE CARD ON THE TOP OF THE PILE YOU MUST PICK UP
+          THE PILE
+        </p>
+        <p>YOU MAY ALSO PICK UP THE PILE ON ANY TURN</p>
+        <p>
+          AT THE END OF YOUR TURN IF YOU HAVE LESS THAN 3 CARDS IN YOUR HAND YOU
+          MUST DRAW CARDS UNTIL YOU HAVE 3
+        </p>
+        <p>
+          WHEN THERE ARE NO CARDS LEFT IN YOUR DECK AND IN YOUR HAND YOU PLAY
+          USING THE FACE UP CARDS YOU SELECTED AT THE START OF THE GAME
+        </p>
+        <p>
+          WHEN YOU HAVE PLAYED ALL YOUR FACE UP CARDS YOU SELECT FROM THE FACE
+          DOWN CARDS - THESE ARE PLAYED AS SOON AS THEY ARE REVEALED
+        </p>
+      </div>
+      <div class="instructions cards">
+        <p>CERTAIN CARDS HAVE SPECIAL RULES</p>
+        <p>2 - CAN BE PLAYED AT ANY TIME</p>
+        <p>
+          7 - TO BEAT A 7, YOU MUST PLAY CARDS OF EQUAL OR LOWER VALUE -
+          (OPTIONAL) CAN BE PLAYED AT ANY TIME - (OPTIONAL) REVERSES PLAYER TURN
+          ORDER
+        </p>
+        <p>
+          8 - CAN BE PLAYED AT ANY TIME - TO BEAT AN 8, YOU MUST BEAT THE VALUE
+          OF THE CARD BELOW THE 8
+        </p>
+        <p>
+          10 - CAN BE PLAYED AT ANY TIME - DISCARDS THE PILE - PLAYING A 10 GETS
+          YOU ANOTHER TURN
+        </p>
+        <p>
+          JOKER - CAN BE PLAYED AT ANY TIME - PICK A PLAYER, THEY PICK UP THE
+          WHOLE PILE AND YOU GET ANOTHER TURN (YOU CAN GIVE THE PILE TO A PLAYER
+          WHO HAS NO CARDS TO GET THEM BACK IN THE GAME)
+        </p>
+      </div>
+    </section>
+    <div class="loading">
+      <div class="poop">
+        <div class="poop1">💩</div>
+        <div class="poop0">💩</div>
+      </div>
+      <div class="btn loading-text">NOW LOADING</div>
+      <div class="poop">
+        <div class="poop0">💩</div>
+        <div class="poop1">💩</div>
+      </div>
+    </div>
+    <div class="poops">
+    </div>
   </body>
 </html>

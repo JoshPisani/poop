@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #7d4424;
+  font-size: 3vmin;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  background-color: #7d4424;
+  transition: 0.5s;
+  border: 0.5em solid black;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 150vw;
+  right: -150vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+section.active {
+  left: 0;
+}
+
+section.return {
+  left: -150vw;
+  right: 150vw;
+}
+
+section#menu {
+  text-align: center;
+}
+
+section::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.profile_picture {
+  width: 4em;
+  height: 4em;
+}
+
+.output {
+  color: #4968ad;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.header {
+  background-image: url("../img/header.png");
+  background-size: contain;
+  width: 100vw;
+  height: 100vw;
+}
+
+.stats {
+  font-size: 2em;
+  margin: 0.5em 0;
+}
+
+.btn-container {
+  font-size: 2em;
+  text-align: center;
+  margin: 0.25em;
+}
+
+.btn {
+  border-radius: 0.25em;
+  padding: 0.5em;
+  border: 0.2em solid #111;
+  display: block;
+  font-size: 1em;
+  margin: 0.3em auto;
+  background-color: #d48c59;
+  font-family: monospace;
+  line-height: 0.6em;
+  font-weight: bold;
+}
+
+.menu-btn {
+  width: 60%;
+}
+
+.btn:active {
+  background-color: #814c26;
+}
+
+.btn.active {
+  background-color: #814c26;
+}
+
+.btn.btn-back {
+  font-size: 0.75em;
+  margin: 0.3em;
+}
+
+.submenu-btn {
+  width: 30%;
+  font-size: 0.6em;
+  display: inline-block;
+}
+
+.instructions {
+  position: absolute;
+  margin: 1em;
+  padding: 0 1em;
+  border: 0.25em solid black;
+  background-color: #d48c59;
+  transition: 0.5s;
+  left: 100vw;
+  right: -100vw;
+  overflow-y: scroll;
+  bottom: 0;
+  top: 15vh;
+  font-size: 1.5em;
+}
+
+.instructions.return {
+  left: -100vw;
+  right: 100vw;
+}
+
+.instructions.active {
+  left: 0;
+  right: 0;
+}
+
+.instructions::-webkit-scrollbar {
+  display: none;
+}
+
+.player-img {
+  width: 3em;
+  height: 3em;
+  background-size: contain;
+  display: inline-block;
+}
+
+.players {
+  margin: 1em;
+  border: 0.25em solid black;
+  font-size: 2em;
+  background-color: #d48c59;
+}
+
+.players-title {
+  TEXT-ALIGN: center;
+}
+
+.player {
+  border-top: 0.25em solid black;
+  margin-bottom: -0.24em;
+}
+
+.player-name {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0.65em 0.5em;
+  font-size: 1.25em;
+}
+
+.x {
+  animation: x 1.5s linear infinite alternate;
+  margin-top: 9vh;
+}
+
+@keyframes x {
+  100% {
+    transform: translateX( calc(150vw));
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinb {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.loading {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 2;
+  width: 100%;
+}
+
+.loading-text {
+  font-size: 3em;
+  line-height: 1em;
+  width: 50vw;
+}
+
+.poops {
+  z-index: -2;
+  position: absolute;
+  margin-left: -20vh;
+}
+
+.poop {
+  font-size: 3em;
+}
+
+.poop div {
+  margin: 10px 30px;
+}
+
+.poop1 {
+  animation-name: spin;
+  display: inline-block;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.poop0 {
+  animation-name: spinb;
+  display: inline-block;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
